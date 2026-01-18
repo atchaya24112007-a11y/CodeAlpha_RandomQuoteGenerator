@@ -1,46 +1,56 @@
-# CodeAlpha_RandomQuoteGenerator
-Random Code Generator App
+Random Quote Generator
+Description:
 
-The Random Code Generator App is a simple application that generates a unique random code each time the user clicks a button. In addition to code generation, the app displays a greeting message based on the current time of the day, providing a personalized user experience.
+The Random Quote Generator is a simple web application that displays a new random quote every time the user clicks a button. Along with quote generation, the application also shows a greeting message based on the current time of the day, such as Good Morning, Good Afternoon, or Good Evening, providing a personalized user experience.
 
-Features
+This project is designed to demonstrate basic web development concepts including dynamic content rendering, conditional logic, and user interaction.
 
-Generates a new random code on every button click
+Features:
 
-Displays time-based greetings such as:
+Generates a random quote on each button click
 
-*Good Morning
+Displays time-based greetings
 
-*Good Afternoon
-
-*Good Evening
-
-*Good Night
-
-User-friendly and minimal interface
+Clean and simple user interface
 
 Beginner-friendly project structure
 
 Technologies Used
 
- Application UI development
+HTML – Structure of the application
 
- Random code generation logic
+CSS (Inline CSS) – Basic styling and layout
 
- Conditional statements for time-based greetings
+JavaScript –
 
- Event handling for button clicks
+Random quote generation
 
-Project Objective
+Time-based greeting logic
 
-The objective of this project is to practice core app development concepts such as user interaction, conditional logic, and dynamic content rendering. This project is suitable for beginners and is part of academic/internship learning.
+Button click handling
 
-Future Improvements
+How It Works
 
- Option to customize code length
+The user clicks the Generate Quote button.
 
- Copy generated code to clipboard
+A random quote is selected and displayed on the screen.
 
-UI enhancements and animations
+Based on the system time, an appropriate greeting message is shown.
 
-Code history tracking
+Project Objective:
+
+The objective of this project is to practice core front-end development skills such as working with JavaScript logic, handling user events, and creating dynamic UI elements. This project is suitable for beginners and is part of an internship learning task.
+
+Future Enhancements:
+
+Add more quotes or categories
+
+Improve UI styling and responsiveness
+
+Add copy-to-clipboard functionality
+
+Store previously generated quotes
+
+Author:
+
+Developed as part of the CodeAlpha App Development Internship.
