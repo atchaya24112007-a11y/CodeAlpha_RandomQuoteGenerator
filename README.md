@@ -23,13 +23,13 @@ Beginner-friendly project structure
 
 Technologies Used
 
-^ Application UI development
+ Application UI development
 
-^ Random code generation logic
+ Random code generation logic
 
-^ Conditional statements for time-based greetings
+ Conditional statements for time-based greetings
 
-^ Event handling for button clicks
+ Event handling for button clicks
 
 Project Objective
 
@@ -37,9 +37,9 @@ The objective of this project is to practice core app development concepts such 
 
 Future Improvements
 
-^ Option to customize code length
+ Option to customize code length
 
-^ Copy generated code to clipboard
+ Copy generated code to clipboard
 
 UI enhancements and animations
 
