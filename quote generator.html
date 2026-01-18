@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .app-container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid #eaeaea;
+        }
+        
+        .greeting {
+            font-size: 28px;
+            color: #1f1f1f;
+            margin-bottom: 30px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .greeting-emoji {
+            font-size: 28px;
+        }
+        
+        .app-title {
+            font-size: 24px;
+            color: #0066cc;
+            margin-bottom: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .book-icon {
+            font-size: 26px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .quote-container {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px;
+            border-left: 4px solid #0066cc;
+            text-align: left;
+        }
+        
+        .quote-text {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333333;
+            margin-bottom: 20px;
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 16px;
+            color: #555555;
+            font-weight: 500;
+        }
+        
+        .author-dash {
+            color: #0066cc;
+            margin-right: 4px;
+        }
+        
+        .new-quote-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .new-quote-btn:hover {
+            background-color: #0052a3;
+        }
+        
+        .new-quote-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .app-footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888888;
+        }
+        
+        /* Simple and clean - just like the screenshot */
+        @media (max-width: 600px) {
+            .app-container {
+                padding: 30px 20px;
+                max-width: 90%;
+            }
+            
+            .greeting {
+                font-size: 24px;
+            }
+            
+            .app-title {
+                font-size: 22px;
+            }
+            
+            .quote-text {
+                font-size: 18px;
+            }
+            
+            .new-quote-btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="greeting">
+            <span id="greeting-text">Good Afternoon!</span>
+            <span id="greeting-emoji" class="greeting-emoji">😊</span>
+        </div>
+        
+        <h1 class="app-title">
+            <span class="book-icon">📚</span>
+            Quote Generator
+        </h1>
+        
+        <p class="tagline">Get inspired daily</p>
+        
+        <div class="quote-container">
+            <p id="quote-text" class="quote-text">Life is what happens when you're busy making other plans.</p>
+            <p id="quote-author" class="quote-author">
+                <span class="author-dash">—</span>
+                <span id="author-name">John Lennon</span>
+            </p>
+        </div>
+        
+        <button id="new-quote-btn" class="new-quote-btn">New Quote</button>
+        
+        <div class="app-footer">
+            Click button for new inspiration
+        </div>
+    </div>
+
+    <script>
+        // Quotes database
+        const quotes = [
+            {
+                text: "Life is what happens when you're busy making other plans.",
+                author: "John Lennon"
+            },
+            {
+                text: "The only way to do great work is to love what you do.",
+                author: "Steve Jobs"
+            },
+            {
+                text: "The future belongs to those who believe in the beauty of their dreams.",
+                author: "Eleanor Roosevelt"
+            },
+            {
+                text: "It is during our darkest moments that we must focus to see the light.",
+                author: "Aristotle"
+            },
+            {
+                text: "Whoever is happy will make others happy too.",
+                author: "Anne Frank"
+            },
+            {
+                text: "You must be the change you wish to see in the world.",
+                author: "Mahatma Gandhi"
+            },
+            {
+                text: "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+                author: "Mother Teresa"
+            },
+            {
+                text: "The only thing we have to fear is fear itself.",
+                author: "Franklin D. Roosevelt"
+            },
+            {
+                text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+                author: "Ralph Waldo Emerson"
+            },
+            {
+                text: "Be yourself; everyone else is already taken.",
+                author: "Oscar Wilde"
+            }
+        ];
+
+        // Get DOM elements
+        const quoteText = document.getElementById('quote-text');
+        const authorName = document.getElementById('author-name');
+        const newQuoteBtn = document.getElementById('new-quote-btn');
+        const greetingText = document.getElementById('greeting-text');
+        const greetingEmoji = document.getElementById('greeting-emoji');
+
+        // Set greeting based on current time
+        function updateGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            
+            if (hour < 12) {
+                greetingText.textContent = "Good Morning!";
+                greetingEmoji.textContent = "☀️";
+            } else if (hour < 18) {
+                greetingText.textContent = "Good Afternoon!";
+                greetingEmoji.textContent = "😊";
+            } else {
+                greetingText.textContent = "Good Evening!";
+                greetingEmoji.textContent = "🌙";
+            }
+        }
+
+        // Get random quote
+        function getRandomQuote() {
+            return quotes[Math.floor(Math.random() * quotes.length)];
+        }
+
+        // Display new quote
+        function showNewQuote() {
+            const quote = getRandomQuote();
+            quoteText.textContent = quote.text;
+            authorName.textContent = quote.author;
+            
+            // Simple animation
+            quoteText.style.opacity = '0.7';
+            setTimeout(() => {
+                quoteText.style.opacity = '1';
+            }, 150);
+        }
+
+        // Initialize app
+        function initApp() {
+            // Set initial greeting
+            updateGreeting();
+            
+            // Update greeting every minute (in case user keeps app open)
+            setInterval(updateGreeting, 60000);
+            
+            // Add event listener to button
+            newQuoteBtn.addEventListener('click', showNewQuote);
+            
+            // Also allow spacebar to get new quote
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    showNewQuote();
+                }
+            });
+            
+            // Optional: Auto-refresh quote every 30 seconds
+            // setInterval(showNewQuote, 30000);
+        }
+
+        // Start the app
+        initApp();
+    </script>
+</body>
+</html>
